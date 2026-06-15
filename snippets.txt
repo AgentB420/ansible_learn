@@ -1,3 +1,8 @@
+# This file contains snippets of commands and playbooks for Ansible.
+# These snippets are meant to be used as references for common tasks and operations in Ansible.
+# Please refer to the Ansible documentation for more detailed information on how to use these snippets effectively.
+
+
 ****test server become**** "whoami"
 ansible-playbook -i inventory.yml playbook/test_become.yaml --ask-become-pass # login as: root
 
