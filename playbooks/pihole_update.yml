@@ -1,0 +1,13 @@
+---
+- name: Update Pi-hole
+  hosts: dns
+  become: true
+
+  tasks:
+    - name: Update Pi-hole
+      ansible.builtin.command: pihole -up
+      register: pihole_update
+
+    - name: Show update output
+      ansible.builtin.debug:
+        var: pihole_update.stdout_lines

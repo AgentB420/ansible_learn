@@ -1,0 +1,22 @@
+---
+- name: Backup server configuration
+  hosts: all
+  become: true
+  gather_facts: true
+
+  tasks:
+    - name: Fetch hostname file
+      ansible.builtin.fetch:
+        src: /etc/hostname
+        dest: /srv/orchestration_homelabs2/ansible_learn/backups/
+        flat: false
+
+    - name: Fetch hosts file
+      ansible.builtin.fetch:
+        src: /etc/hosts
+        dest: /srv/orchestration_homelabs2/ansible_learn/backups/
+        flat: false
+
+    - name: Show backup status
+      ansible.builtin.debug:
+        msg: "Backup completed for {{ inventory_hostname }}"

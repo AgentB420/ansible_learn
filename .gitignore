@@ -1,6 +1,9 @@
 # Real inventories
 inventory.yml
 
+# private maps
+backups/
+
 # Real variables
 group_vars/all.yml
 host_vars/*.yml

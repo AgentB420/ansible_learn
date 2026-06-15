@@ -1,0 +1,14 @@
+****test server become**** "whoami"
+ansible-playbook -i inventory.yml playbook/test_become.yaml --ask-become-pass # login as: root
+
+****update servers****
+ansible-playbook -i inventory.yml playbooks/update_servers.yml --ask-become-pass # login as: root
+
+****upadate proxmox servers****
+ansible-playbook -i inventory.yml playbooks/proxmox_update.yml
+
+****update dns servers****
+ansible-playbook -i inventory.yml playbooks/pihole_update.yml
+
+****reboot servers****
+ansible-playbook -i inventory.yml playbooks/reboot_servers.yml

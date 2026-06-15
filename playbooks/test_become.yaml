@@ -1,6 +1,6 @@
 ---
 - name: Test sudo
-  hosts: pihole
+  hosts: all
   become: true
 
   tasks:
