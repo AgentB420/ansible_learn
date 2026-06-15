@@ -1,0 +1,2 @@
+---
+ansible_user: root # not recommended, but I don't want to create a new user on the Pi-hole VM just for Ansible.

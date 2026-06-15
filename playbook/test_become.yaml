@@ -1,0 +1,12 @@
+---
+- name: Test sudo
+  hosts: pihole
+  become: true
+
+  tasks:
+    - name: Show current user
+      command: whoami
+      register: result
+
+    - debug:
+        var: result.stdout
