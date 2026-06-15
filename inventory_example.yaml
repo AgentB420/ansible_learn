@@ -1,0 +1,26 @@
+---
+all:
+  children:
+
+    monitoring:
+      hosts:
+        kuma:
+          ansible_host: 192.168.x.x
+
+    services:
+      hosts:
+        joplin:
+          ansible_host: 192.168.x.x
+
+        pihole:
+          ansible_host: 192.168.x.x
+
+    infrastructure:
+      hosts:
+        server:
+          ansible_host: 192.168.x.x
+
+    virtualization:
+      hosts:
+        proxmox:
+          ansible_host: 192.168.x.x

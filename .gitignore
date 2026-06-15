@@ -1,0 +1,19 @@
+# Real inventories
+inventory.yml
+
+# Real variables
+group_vars/all.yml
+host_vars/*.yml
+
+# SSH keys
+*.pem
+*.key
+id_rsa*
+id_ed25519*
+
+# Python
+.venv/
+__pycache__/
+
+# Ansible
+*.retry
