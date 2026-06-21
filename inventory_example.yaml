@@ -1,26 +1,35 @@
----
 all:
   children:
 
     monitoring:
       hosts:
         kuma:
-          ansible_host: 192.168.x.x
+          ansible_host: 192.168.vlan10.x
+        librenms:
+          ansible_host: 192.168.vlan10.x
 
     services:
       hosts:
         joplin:
-          ansible_host: 192.168.x.x
-
-        pihole:
-          ansible_host: 192.168.x.x
+          ansible_host: 192.168.vlan40.x
 
     infrastructure:
       hosts:
-        server:
-          ansible_host: 192.168.x.x
+        gns3:
+          ansible_host: 192.168.vlan40.x
+        paul:
+          ansible_host: 192.168.vlan40.x
+
+    dns:
+      hosts:
+        pihole:
+          ansible_host: 192.168.vlan10.x
+
 
     virtualization:
       hosts:
-        proxmox:
-          ansible_host: 192.168.x.x
+        proxmox-home:
+          ansible_host: 192.168.vlan10.x
+
+        proxmox-test-lab:
+          ansible_host: 192.168.vlan40.x
