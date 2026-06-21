@@ -1,0 +1,25 @@
+---
+- name: Update LibreNMS server
+  hosts: librenms
+
+
+
+
+
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+
+    - name: Upgrade packages
+      ansible.builtin.apt:
+        upgrade: dist
+
+    - name: Run LibreNMS daily maintenance
+      ansible.builtin.command: /opt/librenms/daily.sh
+      register: librenms_update
+      changed_when: false
+
+    - name: Show LibreNMS output
+      ansible.builtin.debug:
+        var: librenms_update.stdout_lines
